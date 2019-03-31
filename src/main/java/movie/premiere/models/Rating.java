@@ -1,4 +1,4 @@
-package movie.premiere.configuration.model;
+package movie.premiere.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Credentials {
-    private Bot botConfiguration;
+public class Rating {
+    private String source;
+    private String value;
 }

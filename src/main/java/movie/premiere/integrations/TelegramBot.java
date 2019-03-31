@@ -1,10 +1,17 @@
-package movie.premiere.bots;
+package movie.premiere.integrations;
 
+import movie.premiere.configuration.Configuration;
 import org.telegram.telegrambots.bots.TelegramWebhookBot;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-public class ReleaseMessageBot extends TelegramWebhookBot {
+import javax.inject.Inject;
+
+public class TelegramBot extends TelegramWebhookBot {
+
+    @Inject
+    private Configuration configuration;
+
     @Override
     public BotApiMethod onWebhookUpdateReceived(Update update) {
         return null;
@@ -12,16 +19,16 @@ public class ReleaseMessageBot extends TelegramWebhookBot {
 
     @Override
     public String getBotUsername() {
-        return null;
+        return this.configuration.getBotUsername();
     }
 
     @Override
     public String getBotToken() {
-        return null;
+        return this.configuration.getBotToken();
     }
 
     @Override
     public String getBotPath() {
-        return null;
+        return this.configuration.getBotPath();
     }
 }
